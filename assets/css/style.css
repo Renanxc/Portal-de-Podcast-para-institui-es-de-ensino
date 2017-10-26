@@ -1,0 +1,44 @@
+/* General */
+*{
+	font-family: 'Open Sans';
+}
+body{
+	/*background-color: #000!important;*/
+}
+/* Header */
+
+.titulo{
+	color: #fff;
+	font-size: .8em!important;
+}
+.titulo:hover{
+	color: #eee;
+}
+.input-group{
+	padding:5px!important;
+}
+.input-group span{
+	width:40px!important;
+}
+.btn{
+	cursor: pointer;
+}
+/* Main */
+.bg-folha{
+	padding-top: 20px;
+}
+.folha{
+	display: table;
+	height: 100%;
+}
+.folha-content{
+	display: table-cell;
+   	vertical-align: middle;
+}
+.bg-folha h1{
+	text-align: center;
+	font-size: 2em;
+}
+.bg-folha p, .bg-folha ul li, .bg-folha b{
+	font-family: 'roboto';
+	text-align:justify;
