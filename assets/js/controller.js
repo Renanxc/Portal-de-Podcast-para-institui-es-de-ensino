@@ -1,13 +1,9 @@
 $(function(){
-		var h = testWidth(576);
-		var w = testHeight(h);
-		testHeightFolha(w,h)
+		testHeightFolha(576,testHeight(testWidth(576)));
 	}
 );
 $(window).resize(
 	function(){
-		var h = testWidth(576);
-		var w = testHeight(h);
-		testHeightFolha(w,h)
+		testHeightFolha(576,testHeight(testWidth(576)));
 	}
 );
