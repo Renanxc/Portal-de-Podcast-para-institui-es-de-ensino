@@ -3,7 +3,7 @@ var testWidth = function(width){
 	var folhaEscolhida = 0;
 	// if ($(window).outerWidth() > width)
 		for (var i = 0; i < folha.length; i++) {
-			var folhaTemp = mergeContent(folha[i].children);
+			var folhaTemp = mergeContent(folha[i].children,0);
 			if (folhaEscolhida < folhaTemp)
 				folhaEscolhida = folhaTemp;
 		}
@@ -34,12 +34,19 @@ var testHeightFolha = function(width,height){
 	else
 		$('.respH').height(height);
 }
-var mergeContent = function(children){
-	var height = 0;
+var mergeContent = function(children,height){
 	for (var i = 0; i < children.length; i++) {
-		var styles = window.getComputedStyle(children[i]);
-		var margin = parseFloat(styles['margin-top']) + parseFloat(styles['margin-bottom']);
-		height = height + children[i].offsetHeight + margin;
+		if (children[i].children.length != 0) {
+			// console.log('entrei'+i);
+			height = mergeContent(children[i].children,height);
+		}
+		else{
+			var styles = window.getComputedStyle(children[i]);
+			var margin = parseFloat(styles['margin-top']) + parseFloat(styles['margin-bottom']);
+			var padding = parseFloat(styles['padding-top']) + parseFloat(styles['padding-bottom']);
+			height = height + children[i].offsetHeight + margin + padding;
+			// console.log(height);
+		}
 	}
 	return height;
 }
@@ -48,3 +55,14 @@ var getWindowHeight = function(){
 	var navbar = $('nav').outerHeight();
 	return (win - navbar)-25;
 }
+
+
+
+
+$('#limpaCampos').on('click',function(event){
+	event.preventDefault();
+	$('#nome').val('');
+	$('#email').val('');
+	$('#assunto').val('');
+	$('#msg').val('');
+});

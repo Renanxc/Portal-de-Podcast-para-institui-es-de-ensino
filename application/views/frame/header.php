@@ -14,10 +14,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	<nav class="navbar navbar-expand-xs bg-info navbar-info	">
 		<div class="container-fluid">
-			<div class="navbar-header col-sm-3 col-xs-12">
-				<a class="navbar-brand titulo" href="#">POrtal D'Learning</a>
+			<div class="navbar-header col-sm-3 col-12 text-center">
+				<a class="navbar-brand titulo" data-toggle="modal" data-target="#myModal" href="#">POrtal D'Learning <br><span class="badge badge-primary">Menu</span></a>
 			</div>
-			<div class="navbar-right col-sm-9 col-xs-12">
+
+			<!-- The Modal -->
+			<div class="modal fade" id="myModal">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title">Menu</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+						<div class="modal-body text-center">
+							<div class="btn-group">
+								<a class="btn btn-info <?php if($atual=='main') echo 'disabled'; ?>" href="<?= base_url('main');?>">Home</a>
+								<a class="btn btn-info <?php if($atual=='contato') echo 'disabled'; ?>" href="<?= base_url('contato');?>">Contato</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- End Modal-->
+
+			<div class="navbar-right col-sm-9 col-12">
 			<form class="form-inline">
 				<div class="input-group">
 					<label class="input-group-addon">@</label>
