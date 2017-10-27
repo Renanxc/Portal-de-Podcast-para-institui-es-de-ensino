@@ -43,19 +43,67 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<!-- End Modal-->
 
 			<div class="navbar-right col-sm-9 col-12">
-			<form class="form-inline">
-				<div class="input-group">
-					<label class="input-group-addon">@</label>
-					<input type="text" class="form-control" placeholder="Username" required="">
-				</div> 
-				<div class="input-group">
-					<label class="input-group-addon">#</label>
-					<input type="password" class="form-control" placeholder="Password" required="">
-				</div>
-				<div class="col text-right">
-					<button type="submit" class="btn btn-light">Enviar</button>
-				</div>
-			</form>
+				<?php
+					echo 	form_open('login', array(
+								'class' => 'form-inline'
+							));
+				?>
+					<div class="input-group">
+				<?php
+					echo 	form_label( '@','login',array(
+								'class' => 'input-group-addon',
+								'name' => 'login'
+							));
+					echo 	form_input( array(
+								'class' => 'form-control',
+								'name' => 'login',
+								'id' => 'login',
+								'placeholder' => 'Username',
+								'type' => 'text',
+								'required' => ''
+							));
+				?>
+					</div> 
+					<div class="input-group">
+				<?php
+					echo 	form_label( '#','psw', array(
+								'class' => 'input-group-addon',
+								'name' => 'psw'
+							));
+					echo 	form_input( array(
+								'class' => 'form-control',
+								'name' => 'psw',
+								'id' => 'psw',
+								'placeholder' => 'Password',
+								'type' => 'password',
+								'required' => ''
+							));
+				?>
+					</div>
+					<div class="col text-right">
+				<?php
+					echo 	form_submit('enviar','Enviar', array(
+								'class' => 'btn btn-light',
+								'type' => 'submit'
+							));
+				?>
+					</div>
+				<?php
+					echo 	form_close();
+				?>
 			</div>
+<!-- 				<form class="form-inline">
+					<div class="input-group">
+						<label class="input-group-addon">@</label>
+						<input type="text" class="form-control" placeholder="Username" required="">
+					</div> 
+					<div class="input-group">
+						<label class="input-group-addon">#</label>
+						<input type="password" class="form-control" placeholder="Password" required="">
+					</div>
+					<div class="col text-right">
+						<button type="submit" class="btn btn-light">Enviar</button>
+					</div>
+				</form> -->
 		</div>
 	</nav>

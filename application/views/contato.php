@@ -6,36 +6,36 @@
 				<div class="folha-content">
 					<?php 
 						echo 	form_open();
-						?>
-							<div class="form-group">
-						<?php
+					?>
+						<div class="form-group">
+					<?php
 						echo 	form_label('Nome:', 'nome');
 						echo 	form_input('nome',set_value('nome'),array(
 									'id' => 'nome',
 									'class' => 'form-control'
 								));
-						?>
-							</div>
-							<div class="form-group">
-						<?php
+					?>
+						</div>
+						<div class="form-group">
+					<?php
 						echo 	form_label('Email:', 'email');
 						echo 	form_input('email',set_value('email'),array(
 									'id' => 'email',
 									'class' => 'form-control'
 								));
-						?>
-							</div>
-							<div class="form-group">
+					?>
+						</div>
+						<div class="form-group">
 						<?php
 						echo 	form_label('Assunto:', 'assunto');
 						echo 	form_input('assunto',set_value('assunto'),array(
 									'id' => 'assunto',
 									'class' => 'form-control'
 								));
-						?>
-							</div>
-							<div class="form-group">
-						<?php
+					?>
+						</div>
+						<div class="form-group">
+					<?php
 						echo 	form_label('Mensagem:', 'mensagem');
 						echo 	form_textarea( array(
 									'name' => 'mensagem',
@@ -44,9 +44,9 @@
 									'class' => 'form-control',
 									'rows' => '3'
 								));
-						?>
-							</div>
-						<?php
+					?>
+						</div>
+					<?php
 						echo 	form_reset('reset','Limpar Campos', array(
 									'id' => 'limpaCampos',
 									'class' => 'btn btn-info float-left'
