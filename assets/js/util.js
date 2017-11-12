@@ -45,7 +45,7 @@ var mergeContent = function(children,height){
 			var margin = parseFloat(styles['margin-top']) + parseFloat(styles['margin-bottom']);
 			var padding = parseFloat(styles['padding-top']) + parseFloat(styles['padding-bottom']);
 			height = height + children[i].offsetHeight + margin + padding;
-			// console.log(height);
+			// console.log(children[i].id);
 		}
 	}
 	return height;
@@ -57,12 +57,35 @@ var getWindowHeight = function(){
 }
 
 
-
+$('#changePsw').click(function(evt){
+	evt.preventDefault();
+	$('.psw').each(function(){
+		if ($(this).attr('type') == "password") $(this).attr('type','text');
+		else $(this).attr('type','password');
+	});
+});
 
 $('#limpaCampos').on('click',function(event){
 	event.preventDefault();
 	$('#nome').val('');
+	$('#nasc').val('');
+	$('#tel').val('');
 	$('#email').val('');
+	$('#login-cad').val('');
+	$('#psw-cad').val('');
+	$('#psw2').val('');
 	$('#assunto').val('');
 	$('#msg').val('');
+	$('#descricao').val('');
+	$('.jqte_editor').html('');
+});
+
+$('.editorhtml').jqte();
+
+$('.jqte_tool_label').height('unset');
+
+$("#myModal2").modal("show");
+
+$('#pod').on('change',function(){
+	$('#file_form').submit();
 });

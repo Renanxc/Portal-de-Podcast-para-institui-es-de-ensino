@@ -1,10 +1,9 @@
 $(function(){
-		testHeightFolha(576,testHeight(testWidth(576)));
-		// $('.titulo').click(function(event){
-		// 	event.preventDefault();
-		// });
-	}
-);
+	testHeightFolha(576,testHeight(testWidth(576)));
+	// $('.titulo').click(function(event){
+	// 	event.preventDefault();
+	// });
+});
 $(window).resize(
 	function(){
 		testHeightFolha(576,testHeight(testWidth(576)));
@@ -23,6 +22,8 @@ var observer = new MutationObserver(function(mutations) {
 var target = $('#msg')[0];
 // configuration of the observer:
 var config = { attributes: true, childList: true, characterData: true };
- 
-// pass in the target node, as well as the observer options
-observer.observe(target, config);
+
+if (target) { 
+	// pass in the target node, as well as the observer options
+	observer.observe(target, config);
+}

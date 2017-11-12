@@ -5,7 +5,7 @@ class Main extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->helper('form');
+		$this->load->library('email');
 	}
 
 	public function index(){
@@ -21,7 +21,6 @@ class Main extends CI_Controller {
 		$this->load->view('frame/footer');
 	}
 	public function contato(){
-		$this->load->library(array('form_validation','email'));
 		$this->form_validation->set_rules('nome', 'Nome','trim|required');
 		$this->form_validation->set_rules('email', 'Email','trim|required|valid_email');
 		$this->form_validation->set_rules('assunto', 'Assunto','trim|required');

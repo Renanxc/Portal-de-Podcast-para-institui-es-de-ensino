@@ -1,0 +1,12 @@
+ToDo
+
+	Admin Controller
+		X Menu de pesquisa para usuários
+		X Atualizar Cod de Grade sempre que modificar Curso ou usuário
+		X Na troca de período, renovar quem estiver setado com renovável e retirar opção dos outros
+		X Exportação para Excel
+
+	Trabalhos futuros 
+		X Adicionar mais uma classe chamada coordenador
+		X Gerar para cada turma um xml para ser usado em agregadores de Feed RSS
+		X Enivar email para alunos para cada podcast adicionado
